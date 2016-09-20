@@ -44,6 +44,8 @@ extern int wiringPiI2CRead           (int fd) ;
 extern int wiringPiI2CReadReg8       (int fd, int reg) ;
 extern int wiringPiI2CReadReg16      (int fd, int reg) ;
 extern int wiringPiI2CWrite          (int fd, int data) ;
+extern int wiringPiI2CReadBuffer     (int fd, unsigned char reg, int cmd, int pin, int length) ;
+extern int wiringPiI2CWriteBuffer 	 (int fd, unsigned char reg, int cmd, int pin, int val, int length) ;
 extern int wiringPiI2CWriteReg8      (int fd, int reg, int data) ;
 extern int wiringPiI2CWriteReg16     (int fd, int reg, int data) ;
 extern int wiringPiI2CSetupInterface (const char *device, int devId) ;
