@@ -116,6 +116,7 @@ ZEND_NAMED_FUNCTION(_wrap_softToneCreate);
 ZEND_NAMED_FUNCTION(_wrap_softToneStop);
 ZEND_NAMED_FUNCTION(_wrap_softToneWrite);
 ZEND_NAMED_FUNCTION(_wrap_sr595Setup);
+ZEND_NAMED_FUNCTION(_wrap_grovepiSetup);
 ZEND_NAMED_FUNCTION(_wrap_ds1302rtcRead);
 ZEND_NAMED_FUNCTION(_wrap_ds1302rtcWrite);
 ZEND_NAMED_FUNCTION(_wrap_ds1302ramRead);

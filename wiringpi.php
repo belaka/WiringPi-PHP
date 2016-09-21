@@ -371,6 +371,10 @@ abstract class wiringpi {
 		return sr595Setup($pinBase,$numPins,$dataPin,$clockPin,$latchPin);
 	}
 
+	static function grovepiSetup($pinBase,$i2cAddress) {
+		return grovepiSetup($pinBase,$i2cAddress);
+	}
+
 	static function ds1302rtcRead($reg) {
 		return ds1302rtcRead($reg);
 	}

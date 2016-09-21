@@ -3831,6 +3831,39 @@ fail:
 }
 
 
+ZEND_NAMED_FUNCTION(_wrap_grovepiSetup) {
+  int arg1 ;
+  int arg2 ;
+  zval **args[2];
+  int result;
+  
+  SWIG_ResetError();
+  if(ZEND_NUM_ARGS() != 2 || zend_get_parameters_array_ex(2, args) != SUCCESS) {
+    WRONG_PARAM_COUNT;
+  }
+  
+  
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[0]);
+  arg1 = (int) Z_LVAL_PP(args[0]);
+  /*@SWIG@*/;
+  
+  
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[1]);
+  arg2 = (int) Z_LVAL_PP(args[1]);
+  /*@SWIG@*/;
+  
+  result = (int)grovepiSetup(arg1,arg2);
+  {
+    ZVAL_LONG(return_value,result);
+  }
+  return;
+fail:
+  SWIG_FAIL();
+}
+
+
 ZEND_NAMED_FUNCTION(_wrap_ds1302rtcRead) {
   int arg1 ;
   zval **args[1];
@@ -5885,6 +5918,7 @@ static zend_function_entry wiringpi_functions[] = {
  SWIG_ZEND_NAMED_FE(softtonestop,_wrap_softToneStop,NULL)
  SWIG_ZEND_NAMED_FE(softtonewrite,_wrap_softToneWrite,NULL)
  SWIG_ZEND_NAMED_FE(sr595setup,_wrap_sr595Setup,NULL)
+ SWIG_ZEND_NAMED_FE(grovepisetup,_wrap_grovepiSetup,NULL)
  SWIG_ZEND_NAMED_FE(ds1302rtcread,_wrap_ds1302rtcRead,NULL)
  SWIG_ZEND_NAMED_FE(ds1302rtcwrite,_wrap_ds1302rtcWrite,NULL)
  SWIG_ZEND_NAMED_FE(ds1302ramread,_wrap_ds1302ramRead,NULL)

@@ -142,6 +142,9 @@ extern void softToneWrite  (int pin, int freq) ;
 // Header file WiringPi/wiringPi/sr595.h
 extern int sr595Setup (const int pinBase, const int numPins,
         const int dataPin, const int clockPin, const int latchPin) ;
+        
+// Header file WiringPi/wiringPi/grovepi.h
+extern int grovepiSetup (const int pinBase, const int i2cAddress) ;
 
 // Header file WiringPi/devLib/ds1302.h
 extern unsigned int ds1302rtcRead       (const int reg) ;
