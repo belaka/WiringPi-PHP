@@ -2226,7 +2226,7 @@ ZEND_NAMED_FUNCTION(_wrap_wiringPiI2CReadBuffer) {
   int arg4 ;
   int arg5 ;
   zval **args[5];
-  int result;
+  char *result = 0 ;
   
   SWIG_ResetError();
   if(ZEND_NUM_ARGS() != 5 || zend_get_parameters_array_ex(5, args) != SUCCESS) {
@@ -2263,9 +2263,13 @@ ZEND_NAMED_FUNCTION(_wrap_wiringPiI2CReadBuffer) {
   arg5 = (int) Z_LVAL_PP(args[4]);
   /*@SWIG@*/;
   
-  result = (int)wiringPiI2CReadBuffer(arg1,arg2,arg3,arg4,arg5);
+  result = (char *)wiringPiI2CReadBuffer(arg1,arg2,arg3,arg4,arg5);
   {
-    ZVAL_LONG(return_value,result);
+    if(!result) {
+      ZVAL_NULL(return_value);
+    } else {
+      ZVAL_STRING(return_value, (char *)result, 1);
+    }
   }
   return;
 fail:

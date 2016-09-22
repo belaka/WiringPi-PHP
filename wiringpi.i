@@ -42,4 +42,8 @@
 
 %apply unsigned char { uint8_t };
 
+//%include "carrays.i"
+//%array_class(uint8_t, wiringPiI2CReadBuffer);
+
 %include "bindings.i"
+

@@ -44,7 +44,8 @@ extern int wiringPiI2CRead           (int fd) ;
 extern int wiringPiI2CReadReg8       (int fd, int reg) ;
 extern int wiringPiI2CReadReg16      (int fd, int reg) ;
 extern int wiringPiI2CWrite          (int fd, int data) ;
-extern int wiringPiI2CReadBuffer     (int fd, unsigned char reg, int cmd, int pin, int length) ;
+//extern int *wiringPiI2CReadBuffer     (int fd, unsigned char reg, int cmd, int pin, int length) ;
+extern char *wiringPiI2CReadBuffer (int fd, unsigned char reg, int cmd, int pin, int length) ;
 extern int wiringPiI2CWriteBuffer 	 (int fd, unsigned char reg, int cmd, int pin, int val, int length) ;
 extern int wiringPiI2CWriteReg8      (int fd, int reg, int data) ;
 extern int wiringPiI2CWriteReg16     (int fd, int reg, int data) ;
@@ -142,7 +143,7 @@ extern void softToneWrite  (int pin, int freq) ;
 // Header file WiringPi/wiringPi/sr595.h
 extern int sr595Setup (const int pinBase, const int numPins,
         const int dataPin, const int clockPin, const int latchPin) ;
-        
+
 // Header file WiringPi/wiringPi/grovepi.h
 extern int grovepiSetup (const int pinBase, const int i2cAddress) ;
 
