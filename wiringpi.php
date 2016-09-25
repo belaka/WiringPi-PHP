@@ -195,8 +195,8 @@ abstract class wiringpi {
 		return wiringPiI2CReadBuffer($fd,$reg,$cmd,$pin,$length);
 	}
 
-	static function wiringPiI2CWriteBuffer($fd,$reg,$cmd,$pin,$val,$length) {
-		return wiringPiI2CWriteBuffer($fd,$reg,$cmd,$pin,$val,$length);
+	static function wiringPiI2CWriteBuffer($fd,$reg,$cmd,$val1,$val2,$val3,$length) {
+		return wiringPiI2CWriteBuffer($fd,$reg,$cmd,$val1,$val2,$val3,$length);
 	}
 
 	static function wiringPiI2CWriteReg8($fd,$reg,$data) {

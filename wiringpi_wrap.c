@@ -2221,7 +2221,7 @@ fail:
 
 ZEND_NAMED_FUNCTION(_wrap_wiringPiI2CReadBuffer) {
   int arg1 ;
-  unsigned char arg2 ;
+  int arg2 ;
   int arg3 ;
   int arg4 ;
   int arg5 ;
@@ -2242,7 +2242,7 @@ ZEND_NAMED_FUNCTION(_wrap_wiringPiI2CReadBuffer) {
   
   /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
   convert_to_long_ex(args[1]);
-  arg2 = (unsigned char) Z_LVAL_PP(args[1]);
+  arg2 = (int) Z_LVAL_PP(args[1]);
   /*@SWIG@*/;
   
   
@@ -2279,16 +2279,17 @@ fail:
 
 ZEND_NAMED_FUNCTION(_wrap_wiringPiI2CWriteBuffer) {
   int arg1 ;
-  unsigned char arg2 ;
+  int arg2 ;
   int arg3 ;
   int arg4 ;
   int arg5 ;
   int arg6 ;
-  zval **args[6];
+  int arg7 ;
+  zval **args[7];
   int result;
   
   SWIG_ResetError();
-  if(ZEND_NUM_ARGS() != 6 || zend_get_parameters_array_ex(6, args) != SUCCESS) {
+  if(ZEND_NUM_ARGS() != 7 || zend_get_parameters_array_ex(7, args) != SUCCESS) {
     WRONG_PARAM_COUNT;
   }
   
@@ -2301,7 +2302,7 @@ ZEND_NAMED_FUNCTION(_wrap_wiringPiI2CWriteBuffer) {
   
   /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
   convert_to_long_ex(args[1]);
-  arg2 = (unsigned char) Z_LVAL_PP(args[1]);
+  arg2 = (int) Z_LVAL_PP(args[1]);
   /*@SWIG@*/;
   
   
@@ -2328,7 +2329,13 @@ ZEND_NAMED_FUNCTION(_wrap_wiringPiI2CWriteBuffer) {
   arg6 = (int) Z_LVAL_PP(args[5]);
   /*@SWIG@*/;
   
-  result = (int)wiringPiI2CWriteBuffer(arg1,arg2,arg3,arg4,arg5,arg6);
+  
+  /*@SWIG:/usr/share/swig2.0/php/utils.i,7,CONVERT_INT_IN@*/
+  convert_to_long_ex(args[6]);
+  arg7 = (int) Z_LVAL_PP(args[6]);
+  /*@SWIG@*/;
+  
+  result = (int)wiringPiI2CWriteBuffer(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
   {
     ZVAL_LONG(return_value,result);
   }
